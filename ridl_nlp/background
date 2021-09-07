@@ -1,0 +1,9 @@
+Background:
+The ability to classify time series with a little/incomplete data is important
+in a number time-sensitive military contexts including: satellite telemetry,
+missile typing, and activity based intelligence (ABI).  In this sabbatical ETSC
+techniques will be applied to Overhead Persistent Infrared (OPIR) data which is
+used to determine the type (and range) of foreign missile systems.  A cursory
+exploration of AI/ML to MW event characterization has been conducted for
+Project West Wing, but a significant gap in research and implementation of
+early timeseries classification remains  

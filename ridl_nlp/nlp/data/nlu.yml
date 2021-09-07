@@ -1,0 +1,129 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: loadfile
+  examples: |
+    - load [testfile.csv] (filename)
+    - load [mybudgetfile.xls](filename)
+    - load [mybudgetfile.xls](filename) into a spreadsheet
+    - load [ggg](filename) into a spreadsheet
+    - load [dci](filename) into the spreadsheet
+    - load [myfile.xlxs](filename)
+    - load [myfile.xlxs](filename) in a spreadsheet
+    - load spreadsheet [myfile.xlxs](filename) into ridl
+    - load [uma.csv](filename)
+    - load [who.py](filename)
+    - load a file called [transactions.xls](filename)
+    - load file [falcon9.xlsx](filename)
+    - import the file [node.csv](filename)
+    - use url [http://stats.idre.ucla.edu/stat/data/binary.csv](filename)]
+    - open url  [http://stats.idre.ucla.edu/stat/data/binary.csv](filename)]
+    - load url  [http://stats.idre.ucla.edu/stat/data/binary.csv](filename)]
+    - use my file [pivot_table.xls](filename)
+    - use the file [pivot_table_1.xls](filename)
+    - open [nehal.csv](filename)
+    - open the file [budgetdata.xlxs](filename)
+    - open the file [budgedata.xlxs](filename) into a spreadsheet
+    - open the file [budgedata.xlxs](filename) in spreadsheet
+    - open the file [budge.xlxs](filename) in spreadsheet
+    - load [foo.csv](filename)
+    - load spreadsheet [foo.csv](filename)
+- intent: login
+  examples: |
+    - login [nehal@gmail.com](login)
+    - login into sheets
+    - login me into sheets
+    - log me into google sheets
+    - log me into the spreadsheet
+    - login
+    - start up
+    - log into google sheets
+- intent: uploadfile
+  examples: |
+    - upload file [nehal.csv](uploadfilename) to directory
+    - upload file [text.dat](uploadfilename) to my google drive
+    - upload file [pivotable.xls](uploadfilename) to my gdrive
+    - upload filee [file.text](uploadfilename) to my gdrive
+    - push file [node.xls](uploadfilename) to my account
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

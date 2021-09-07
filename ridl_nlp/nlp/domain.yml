@@ -1,0 +1,72 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- login
+- loadfile
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+entities:
+- filename
+- first_name
+- login_name
+- uploadfilename
+slots:
+  login_name:
+    type: text
+    influence_conversation: true
+  filename:
+    type: text
+    influence_conversation: true
+  uploadfilename:
+    type: text
+    influence_conversation: true
+  first_name:
+    type: text
+
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_fileloaded:
+  - text: file loaded
+  utter_load:
+  - text: loading spreadsheet {filename}
+  utter_slots_values:
+  - text: I will remember that your name is {first_name}!
+
+actions:
+- action_list
+- action_list_all
+- action_load
+- utter_fileloaded
+- utter_goodbye
+- utter_greet
+- utter_listall
+- utter_load
+- utter_login_info
+- utter_login_name
+- utter_slots_values
+- utter_thanks
+- validate_name_form
+
+forms:
+  name_form:
+    first_name:
+    - type: from_text

@@ -1,34 +1,62 @@
-version: "2.0"
-
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-session_config:
+version: '2.0'
+/ession_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+intents:
+- greet
+- deny
+- request_names
+- affirm
+- mood_great
+- mood_unhappy
+- bot_challenge
+
+forms:
+  name_form:
+    required_slots:  
+      login_name:
+        - type: from_text
+      login_account:
+        - type: from_text
+      login_password:
+        - type: from_text
+slots:
+  login_name:
+    type: text
+    influence_conversation: true
+  filename:
+    type: text
+  login_account:
+    type: text
+    influence_conversation: true
+  login_password:
+    type: text
+  is_logged_in:
+    type: text 
+
+responses:
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_login_complete:
+  - text: You are now logged into the RIDL system.  What would you like to do?m
+  utter_load_spreadsheet:
+  - text: Time to load your spreadsheet 
+  utter_ask_login_password:
+  - text: What is your ridl password. You need this use data stored in ridl
+  utter_ask_login_account:
+  - text: Where is the data stored? google,ridl,local
+  utter_ask_login_name:
+  - text: What is your login name?
+  utter_submit:
+  - text: Ok. Thanks!
+  utter_slots_values:
+  - text: Your user name is {login_name}!
+  utter_welcome:
+  - text: Welcome to RIDL.  You'll need to login. Just type 'login <username>' 
+actions:
+- utter_slots_values
+- utter_submit
+- validate_name_form

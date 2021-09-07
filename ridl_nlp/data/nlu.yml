@@ -1,22 +1,5 @@
 version: "2.0"
-
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +13,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -39,54 +21,66 @@ nlu:
     - of course
     - that sounds good
     - correct
-
-- intent: deny
+- intent: hello
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - hello
+    - What's up
+    - Hi
+    - greetings    
 
-- intent: mood_great
+- intent: listfiles
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - list my files
+    - list all my files
+    - show my files
+    - show all my files
+    - show all my files
+    - list files in my google directory
+    - list files in my directory
+    - show files in my directory
+    - list my recent files
+    - show my recent files
+    - list all my files
+    - show all my files
+    - find files
+    - show files
+    - what files are in my directory
+    - show files that are in my directory
+    - list files that are in my directory
+    - what file do I have have
+    - what file do I have have in my google
+    - what file do I have have in on my hard
+    - what files are in my google drive
 
-- intent: mood_unhappy
+- intent: listfiles_time
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - find most recent files
+    - show most recent files
+    - find most recently used files
+    - show most recently used files
+    - show files from [yesterday](time_range)
+    - show files from [last week]](time_range)
 
-- intent: bot_challenge
+
+- intent: request_names
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - login
+    - login [nehalmeister@gmaal.com](login_name) 
+    - login [uma@ibml.com](login_name) to my [ridl](login_account)
+    - login [fdr@yahoo.com](login_name) to my [google](login_account)
+    - login [rur@gmial.com](login_name) to my [local](login_account)
+    - login [nehalmeister@gmial.com](login_name) to my [local](login_account)
+    - login [foo](login_name) 
+    - login [foobar](login_name)
+    - login me into the [ridl](login_account) 
+    - login me into my [google](login_account) 
+    - login me into my [microsoft](login_account) 
+    - login to the [ridl](login_account) service 
+    - login to the  [google](login_account) service 
+    - use my [google](login_account) to store data  
+    - use the data in my [google](login_account) drive
+    - use the data in my [microsoft one drive](login_account) drive
+    - use the data in my [one drive](login_account) drive
+    - use the data on my [local](login_account) drive
+    - start ridl
+    - start up ridl for me  

@@ -1,0 +1,3 @@
+Step 1.  uncomment socketio line the credentials.yml
+Step 2.  run rasa with this cmdline --> run -m models --enable-api --cors "*" --debug
+Step 3.  Connect the rasa nlp server to webchat  -- `

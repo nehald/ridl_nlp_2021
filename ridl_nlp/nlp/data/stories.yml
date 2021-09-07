@@ -1,0 +1,51 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+
+- story: loadfile
+  steps:
+  - intent: loadfile
+  - action: action_load  
+  - action: utter_load
+
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+
+- story: interactive_story_2
+  steps:
+  - intent: loadfile
+    entities:
+    - filename: nehals.csv
+  - slot_was_set:
+    - filename: nehals.csv
+  - action: action_load
+  - action: utter_load
+
+- story: interactive_story_3
+  steps:
+  - intent: login
+  - action: name_form
+  - action_loop: name_form
+  - slot_was_set:
+    - requested_slot:  first_name
+  - slot_was_set:
+    - first:  nehal@gmail.com
+  - slot_was_set:
+    - requested_slot: null 

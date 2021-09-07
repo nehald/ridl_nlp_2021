@@ -1,0 +1,36 @@
+version: "2.0"
+
+stories:
+- story: hello1
+  steps:
+  - intent: hello
+  - action: utter_welcome 
+  - intent: request_names
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: login_name
+    - requested_slot: login_account
+    - requested_slot: login_password
+  - slot_was_set:
+    - login_name: vincent
+    - login_account: google
+  - active_loop: null
+  - action: utter_login_complete
+  - action: utter_slots_values
+
+- story: interactive_story_1
+  steps:
+  - intent: request_names
+  - action: name_form
+  - active_loop: name_form
+  - slot_was_set:
+    - requested_slot: login_name
+    - requested_slot: login_account
+    - requested_slot: login_password
+  - slot_was_set:
+    - login_name: vincent
+    - login_account: google 
+  - active_loop: null
+  - action: utter_login_complete
+  - action: utter_slots_values

@@ -1,5 +1,10 @@
 # RidlStateServer
 
+Things I need
+* Authentication system
+* 
+
+=============================
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
