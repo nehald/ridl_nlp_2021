@@ -1,27 +1,50 @@
-
 <html>
-
 <body>
+
+<div id="message"></div>
+
+<script>
+let url = 'ws://localhost:8080/ws'
+let socket = new WebSocket(url)
+socket.onmessage = function(event) {
+   let incomingMessage = event.data;
+   showMessage(incomingMessage)
+};
+
+socket.onclose = event => console.log(`Closed ${event.code}`);
+// show message in div#messages
+function showMessage(message) {
+  let messageElem = document.createElement('div');
+  messageElem.textContent = message;
+  document.getElementById('messages').prepend(messageElem);
+}
+</script> 
+
+
+<div id="webchat">
 <script>!(function () {
   let e = document.createElement("script"),
     t = document.head || document.getElementsByTagName("head")[0];
   (e.src =
     "https://cdn.jsdelivr.net/npm/rasa-webchat@1.0.1/lib/index.js"),
-    // Replace 1.x.x with the version that you want
     (e.async = !0),
     (e.onload = () => {
       window.WebChat.default(
         {
           customData: { language: "en" },
-          socketUrl: "https://localhost:5005",
+          socketUrl: "http://localhost:5005",
+          autoClearCache: true,
+          showCloseButton: true,
           // add other props here
+          showMessageDate: true 
         },
         null
       );
     }),
     t.insertBefore(e, t.firstChild);
+    localStorage.clear()
 })();
 </script>
+</div>
 </body>
-
 </html>
