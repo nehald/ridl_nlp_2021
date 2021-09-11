@@ -51,6 +51,13 @@ nlu:
     - what file do I have have in my google
     - what file do I have have in on my hard
     - what files are in my google drive
+- intent: info
+  examples: |
+    -Help!
+    -Help me!
+    -I need help.
+    -What am I supposed to do no
+    -What am I supposed to do now
 
 - intent: listfiles_time
   examples: |
@@ -60,7 +67,13 @@ nlu:
     - show most recently used files
     - show files from [yesterday](time_range)
     - show files from [last week]](time_range)
-
+- intent: create_account
+  examples: |
+    - create a new account for me
+    - make a new account
+    - I need a new account
+    - create an account 
+    - create an account for me 
 
 - intent: request_names
   examples: |

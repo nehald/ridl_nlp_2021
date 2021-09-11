@@ -4,6 +4,8 @@ version: '2.0'
   carry_over_slots_to_new_session: true
 
 intents:
+- info
+- hello
 - greet
 - deny
 - request_names
@@ -34,8 +36,12 @@ slots:
     type: text
   is_logged_in:
     type: text 
+  has_account:
+    type: text
 
 responses:
+  utter_create_user: 
+  - text: I'll try to create a new account for you.   
   utter_did_that_help:
   - text: Did that help you?
   utter_happy:
@@ -55,7 +61,7 @@ responses:
   utter_slots_values:
   - text: Your user name is {login_name}!
   utter_welcome:
-  - text: Welcome to RIDL.  You'll need to login. Just type 'login <username>' 
+  - text: Welcome to RIDL.  You'll need to login. Just type 'login <username>' or if you don't have an account create one with 'create my account' or 'create a ridl account for me'.  I (RIDL) will  lead you through the steps. It's pretty ust username and password. 
 actions:
 - utter_slots_values
 - utter_submit
