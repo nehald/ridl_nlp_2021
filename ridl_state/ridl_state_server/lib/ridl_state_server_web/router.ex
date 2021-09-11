@@ -19,7 +19,6 @@ defmodule RidlStateServerWeb.Router do
 
   scope "/", RidlStateServerWeb do
     pipe_through :browser
-
     live "/", PageLive, :index
   end
 
