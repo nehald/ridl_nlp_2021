@@ -18,6 +18,7 @@ class ValidateNameForm(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate `first_name` value."""
         login_account = tracker.slots['login_account']
+        pdb.set_trace()
         if login_account == 'google':
            try: 
               request_str = "http://localhost:5000/api/login/{0}".format(slot_value)

@@ -4,9 +4,8 @@ rules:
 - rule: Create form
   steps:
   - intent: create_account
-  - action: name_form
-  - active_loop: name_form
-    #  - action: utter_create_user
+  - action: create_form
+  - active_loop: create_form
 
 - rule: Activate form
   steps:
@@ -14,13 +13,24 @@ rules:
   - action: name_form
   - active_loop: name_form
 
-#- rule: Submit form
-#  condition:
-#  - active_loop: name_form
-#  steps:
-#  - action: name_form
-#  - active_loop: null
-#  - slot_was_set:
-#    - requested_slot: null
-#  - action: utter_login_complete
-#  - action: utter_slots_values
+- rule: Submit create form
+  condition:
+  - active_loop: create_form
+  steps:
+  - action: create_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_create_user 
+  - action: utter_slots_values
+
+- rule: Submit name form
+  condition:
+  - active_loop: name_form
+  steps:
+  - action: name_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_login_complete
+  - action: utter_slots_values

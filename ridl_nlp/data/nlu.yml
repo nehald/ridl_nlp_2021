@@ -26,22 +26,18 @@ nlu:
     - hello
     - What's up
     - Hi
-    - greetings    
-
+    - greetings
 - intent: listfiles
   examples: |
     - list my files
     - list all my files
     - show my files
     - show all my files
-    - show all my files
     - list files in my google directory
     - list files in my directory
     - show files in my directory
     - list my recent files
     - show my recent files
-    - list all my files
-    - show all my files
     - find files
     - show files
     - what files are in my directory
@@ -53,12 +49,11 @@ nlu:
     - what files are in my google drive
 - intent: info
   examples: |
-    -Help!
-    -Help me!
-    -I need help.
-    -What am I supposed to do no
-    -What am I supposed to do now
-
+    - Help!
+    - Help me!
+    - I need help.
+    - What am I supposed to do no
+    - What am I supposed to do now
 - intent: listfiles_time
   examples: |
     - find most recent files
@@ -72,28 +67,28 @@ nlu:
     - create a new account for me
     - make a new account
     - I need a new account
-    - create an account 
-    - create an account for me 
-
+    - create an account
+    - create an account for me
+    - create a new login for me
 - intent: request_names
   examples: |
     - login
-    - login [nehalmeister@gmaal.com](login_name) 
+    - login [nehalmeister@gmaal.com](login_name)
     - login [uma@ibml.com](login_name) to my [ridl](login_account)
     - login [fdr@yahoo.com](login_name) to my [google](login_account)
     - login [rur@gmial.com](login_name) to my [local](login_account)
     - login [nehalmeister@gmial.com](login_name) to my [local](login_account)
-    - login [foo](login_name) 
+    - login [foo](login_name)
     - login [foobar](login_name)
-    - login me into the [ridl](login_account) 
-    - login me into my [google](login_account) 
-    - login me into my [microsoft](login_account) 
-    - login to the [ridl](login_account) service 
-    - login to the  [google](login_account) service 
-    - use my [google](login_account) to store data  
+    - login me into the [ridl](login_account)
+    - login me into my [google](login_account)
+    - login me into my [microsoft](login_account)
+    - login to the [ridl](login_account) service
+    - login to the  [google](login_account) service
+    - use my [google](login_account) to store data
     - use the data in my [google](login_account) drive
     - use the data in my [microsoft one drive](login_account) drive
     - use the data in my [one drive](login_account) drive
     - use the data on my [local](login_account) drive
     - start ridl
-    - start up ridl for me  
+    - start up ridl for me

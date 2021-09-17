@@ -31,6 +31,11 @@ slots:
     type: text
 
 responses:
+  utter_welcome:
+  - text: Welcome to RIDL.  Please login or create a new account? Which would you like to do?
+    button:
+      - title: "Login" 
+        payload: "\l
   utter_greet:
   - text: Hey! How are you?
   utter_cheer_up:
