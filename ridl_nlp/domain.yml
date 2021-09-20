@@ -74,7 +74,6 @@ slots:
 responses:
   utter_create_user:
   - text: Just created a new account for you. Your username is {login_name}
-    and your password is {login_password}. .
   utter_did_that_help:
   - text: Did that help you?
   utter_happy:

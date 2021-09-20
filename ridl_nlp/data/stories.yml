@@ -32,11 +32,5 @@ stories:
     - login_name: vincent
     - login_account: google 
   - active_loop: null
-  - action: utter_login_complete
-  - action: utter_slots_values
-
-- story: interactive_story_1
-  steps:
-  - intent: hello
-  - action: utter_welcome
   - action: utter_create_user
+  - action: utter_slots_values
