@@ -13,9 +13,14 @@ defmodule RidlStateServerWeb.Router do
     plug :fetch_current_user
   end
 
+ pipeline :api_auth do
+    plug :ensure_authenticated
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
-  end
+    plug :fetch_session 
+   end
 
   scope "/", RidlStateServerWeb do
     pipe_through :browser
@@ -23,9 +28,12 @@ defmodule RidlStateServerWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", RidlStateServerWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", RidlStateServerWeb do
+     pipe_through [:api, :api_auth]
+     post "/users/register", UserRegistrationController, :create
+     post "/users/login", UserRegistrationController, :create
+
+   end
 
   # Enables LiveDashboard only for development
   #
@@ -74,4 +82,19 @@ defmodule RidlStateServerWeb.Router do
     post "/users/confirm", UserConfirmationController, :create
     get "/users/confirm/:token", UserConfirmationController, :confirm
   end
+
+  defp ensure_authenticated(conn, _opts) do
+    current_user_id = get_session(conn, :current_user_id)
+
+    if current_user_id do
+      conn
+    else
+      conn
+      |> put_status(:unauthorized)
+      |> put_view(CCoreWeb.ErrorView)
+      |> render("401.json", message: "Unauthenticated user")
+      |> halt()
+    end
+  end
+
 end

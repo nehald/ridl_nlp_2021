@@ -1,13 +1,13 @@
 version: "2.0"
 
 rules:
-- rule: Create form
+- rule: activate create form
   steps:
   - intent: create_account
   - action: create_form
   - active_loop: create_form
 
-- rule: Activate form
+- rule: activate name form
   steps:
   - intent: request_names
   - action: name_form
@@ -21,8 +21,8 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_create_account 
   - action: utter_create_user 
-  - action: utter_slots_values
 
 - rule: Submit name form
   condition:

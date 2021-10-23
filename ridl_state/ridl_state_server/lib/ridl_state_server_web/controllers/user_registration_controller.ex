@@ -1,6 +1,6 @@
 defmodule RidlStateServerWeb.UserRegistrationController do
   use RidlStateServerWeb, :controller
-
+  require IEx
   alias RidlStateServer.Accounts
   alias RidlStateServer.Accounts.User
   alias RidlStateServerWeb.UserAuth

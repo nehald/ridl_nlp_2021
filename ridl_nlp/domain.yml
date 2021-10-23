@@ -97,7 +97,7 @@ responses:
 actions:
 - utter_slots_values
 - utter_submit
-- validate_name_form
+- action_create_account
 forms:
   name_form:
     required_slots:

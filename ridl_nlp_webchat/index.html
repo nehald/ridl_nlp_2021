@@ -2,22 +2,6 @@
 <body>
 
 <div id="message"></div>
-
-<script>
-let url = 'ws://localhost:8080/ws'
-let socket = new WebSocket(url)
-socket.onmessage = function(event) {
-   let incomingMessage = event.data;
-   showMessage(incomingMessage)
-};
-
-socket.onclose = event => console.log(`Closed ${event.code}`);
-// show message in div#messages
-function showMessage(message) {
-  let messageElem = document.createElement('div');
-  messageElem.textContent = message;
-  document.getElementById('messages').prepend(messageElem);
-}
 </script> 
 
 
@@ -33,7 +17,8 @@ function showMessage(message) {
         {
           customData: { language: "en" },
           socketUrl: "http://localhost:5005",
-          autoClearCache: true,
+          socketPath: "/socket.io",
+	  autoClearCache: true,
           showCloseButton: true,
           // add other props here
           showMessageDate: true 
