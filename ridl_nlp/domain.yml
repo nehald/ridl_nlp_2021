@@ -5,53 +5,27 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- info:
-    use_entities: true
-- hello:
-    use_entities: true
-- greet:
-    use_entities: true
-- deny:
-    use_entities: true
-- request_names:
-    use_entities: true
-- affirm:
-    use_entities: true
-- mood_great:
-    use_entities: true
-- mood_unhappy:
-    use_entities: true
-- bot_challenge:
-    use_entities: true
-- create_account:
-    use_entities: true
-- goodbye:
-    use_entities: true
-- listfiles:
-    use_entities: true
-- listfiles_time:
-    use_entities: true
+  - info
+  - hello
+  - greet
+  - deny
+  - request_names
+  - affirm
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - create_account
+  - goodbye
+  - listfiles
+  - listfiles_time
+  - guided_login
+  - unguided_login
 entities:
-- login_account
-- login_name
-- time_range
+  - login_account
+  - login_name
+  - time_range
 slots:
   login_name:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
-  filename:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
-  login_account:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
-    auto_fill: true
-    influence_conversation: true
-  login_password:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
     auto_fill: true
@@ -91,28 +65,18 @@ responses:
   utter_submit:
   - text: Ok. Thanks!
   utter_slots_values:
-  - text: Your user name is {login_name}!
+  - text: Your user name is {login_name} -- it's probably your email address!
   utter_welcome:
-  - text: Welcome to RIDL.  You'll need to login. Just type 'login <username>' or if you don't have an account create one with 'create my account' or 'create a ridl account for me'.  I (RIDL) will  lead you through the steps. It's pretty ust username and password.
+  - text: Hi, Welcome! RIDL works with your Google Sheet account, so you'll need to give RIDL temporary access to Google Sheets. So in order to login type 'login your-gmail-address@gmail.com'  or if you're feeling lazy type 'log me in' -- I'll see guide you through the process 
 actions:
-- utter_slots_values
-- utter_submit
-- action_create_account
+  - utter_slots_values
+  - utter_submit
+  - action_login_account
+  - action_list_files
+  - action_help_topic
 forms:
-  name_form:
+  login_form:
     required_slots:
-      login_account:
-      - type: from_text
       login_name:
-      - type: from_text
-      login_password:
-      - type: from_text
-  create_form:
-    required_slots:
-      login_account:
-      - type: from_text
-      login_name:
-      - type: from_text
-      login_password:
       - type: from_text
 e2e_actions: []

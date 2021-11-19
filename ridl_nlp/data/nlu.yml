@@ -1,4 +1,4 @@
-version: "2.0"
+vrsion: "2.0"
 nlu:
 - intent: goodbye
   examples: |
@@ -47,13 +47,20 @@ nlu:
     - what file do I have have in my google
     - what file do I have have in on my hard
     - what files are in my google drive
-- intent: info
+- intent: help 
   examples: |
     - Help!
     - Help me!
     - I need help.
     - What am I supposed to do no
     - What am I supposed to do now
+    - Help me with [loading spreadsheet](help_topic)  
+    - Help me [reading a csv file](help_topic)  
+    - Help me [reading a csv file](help_topic)  
+    - I need info [reading a csv file](help_topic)  
+    - I need help [loading a csv file](help_topic)  
+    - I need help [loading a csv file](help_topic)  
+    - How do I [loada csv file](help_topic)  
 - intent: listfiles_time
   examples: |
     - find most recent files
@@ -62,17 +69,16 @@ nlu:
     - show most recently used files
     - show files from [yesterday](time_range)
     - show files from [last week]](time_range)
-- intent: create_account
+- intent: guided_login 
   examples: |
-    - create a new account for me
-    - make a new account
-    - I need a new account
-    - create an account
-    - create an account for me
-    - create a new login for me
-- intent: request_names
+    - login for me
+    - log into my account  account
+    - login to my account
+    - how do I login to my account
+    - how do I login
+    - how do I log in
+- intent: unguided_login 
   examples: |
-    - login
     - login [nehalmeister@gmaal.com](login_name)
     - login [uma@ibml.com](login_name) to my [ridl](login_account)
     - login [fdr@yahoo.com](login_name) to my [google](login_account)
@@ -90,5 +96,3 @@ nlu:
     - use the data in my [microsoft one drive](login_account) drive
     - use the data in my [one drive](login_account) drive
     - use the data on my [local](login_account) drive
-    - start ridl
-    - start up ridl for me

@@ -1,36 +1,19 @@
 version: "2.0"
 
 rules:
-- rule: activate create form
+- rule: activate guided_login 
   steps:
-  - intent: create_account
-  - action: create_form
-  - active_loop: create_form
+  - intent: guided_login 
+  - action: login_form
+  - active_loop: login_form
 
-- rule: activate name form
-  steps:
-  - intent: request_names
-  - action: name_form
-  - active_loop: name_form
-
-- rule: Submit create form
+- rule: submit guided_login 
   condition:
-  - active_loop: create_form
+    - active_loop: login_form
   steps:
-  - action: create_form
+  - action: login_form
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  - action: action_create_account 
+  - action: action_login_account 
   - action: utter_create_user 
-
-- rule: Submit name form
-  condition:
-  - active_loop: name_form
-  steps:
-  - action: name_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
-  - action: utter_login_complete
-  - action: utter_slots_values

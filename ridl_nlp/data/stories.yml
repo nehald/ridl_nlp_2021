@@ -4,5 +4,17 @@ stories:
 
 - story:  onboard
   steps:
-  - intent: hello
+  - intent: hello 
   - action: utter_welcome
+  - intent: unguided_login
+  - action: action_login_account 
+
+- story: help
+  steps:
+  - intent: help
+  - action: action_help_topic 
+
+- story: list
+  steps:
+  - intent: listfiles
+  - action: action_list_files
